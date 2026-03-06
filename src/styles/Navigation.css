@@ -19,8 +19,8 @@
   border-bottom: 1px solid rgba(196, 148, 90, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 40px;
+  gap: 48px;
 }
 
 .main-nav {
@@ -49,6 +49,7 @@
   display: flex;
   align-items: center;
   gap: 28px;
+  margin-left: auto;
 }
 
 .utility-link {
@@ -78,10 +79,11 @@
   .header-row {
     height: 40px;
     padding: 0 16px;
+    gap: 16px;
   }
 
   .main-nav {
-    gap: 14px;
+    gap: 12px;
   }
 
   .main-nav-link {
@@ -89,10 +91,63 @@
   }
 
   .utility-links {
-    gap: 16px;
+    gap: 14px;
   }
 
   .utility-link {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 580px) {
+  .header-row {
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .main-nav {
+    gap: 8px;
+  }
+
+  .main-nav-link {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .utility-links {
+    gap: 8px;
+  }
+
+  .utility-link {
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-row {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 12px;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .main-nav {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .utility-links {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .main-nav-link {
+    font-size: 10.5px;
+  }
+
+  .utility-link {
+    font-size: 9.5px;
   }
 }
