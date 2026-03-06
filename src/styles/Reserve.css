@@ -1,0 +1,333 @@
+.reserve {
+  position: fixed;
+  top: 46px;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: #161210;
+  border-bottom: 2px solid var(--accent-dim);
+  height: 56px;
+  transition: top 0.4s ease;
+}
+
+.reserve.reserve-top {
+  top: 0;
+}
+
+.reserve-inner {
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.reserve-hotel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  flex-shrink: 0;
+  min-width: 240px;
+  padding-right: 28px;
+}
+
+.reserve-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 3px;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.reserve-name:hover {
+  color: var(--accent-light);
+}
+
+.reserve-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.reserve-address:hover {
+  color: var(--accent-light);
+}
+
+.reserve-separator {
+  width: 1px;
+  height: 32px;
+  background: rgba(196, 148, 90, 0.2);
+  flex-shrink: 0;
+}
+
+.reserve-fields {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  justify-content: flex-end;
+  padding-left: 28px;
+}
+
+.dates-box {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  gap: 2px;
+}
+
+.dates-box-item {
+  position: relative;
+}
+
+.dates-box-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(196, 148, 90, 0.15);
+  margin: 0 2px;
+}
+
+.date-trigger {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.date-trigger:hover {
+  background: rgba(196, 148, 90, 0.07);
+}
+
+.date-display {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.date-day {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.date-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.date-month {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.date-weekday {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.reserve-guests {
+  border: 1px solid rgba(196, 148, 90, 0.2);
+  border-radius: 4px;
+  padding: 0 18px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.reserve-guests:hover {
+  border-color: rgba(196, 148, 90, 0.4);
+}
+
+.guest-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 16px;
+  cursor: pointer;
+  width: 26px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.guest-btn:hover {
+  color: var(--accent-light);
+}
+
+.guest-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.reserve-special {
+  background: transparent;
+  border: 1px solid rgba(196, 148, 90, 0.2);
+  border-radius: 4px;
+  padding: 0 18px;
+  height: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.25s;
+  display: flex;
+  align-items: center;
+}
+
+.reserve-special:hover {
+  border-color: rgba(196, 148, 90, 0.4);
+}
+
+.reserve-cta {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--text-primary);
+  padding: 0 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  height: 36px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.reserve-cta:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+@media (max-width: 1200px) {
+  .reserve-hotel {
+    min-width: 200px;
+    padding-right: 20px;
+  }
+
+  .reserve-fields {
+    padding-left: 20px;
+    gap: 10px;
+  }
+
+  .date-day {
+    font-size: 22px;
+  }
+
+  .reserve-cta {
+    padding: 0 16px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reserve-inner {
+    padding: 0 24px;
+  }
+
+  .reserve-hotel {
+    min-width: auto;
+    padding-right: 16px;
+  }
+
+  .reserve-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .reserve-address {
+    display: none;
+  }
+
+  .reserve-special {
+    display: none;
+  }
+
+  .reserve-fields {
+    padding-left: 16px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reserve {
+    top: 40px;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .reserve-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .reserve-fields {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .reserve-separator {
+    display: none;
+  }
+
+  .reserve-hotel {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .reserve-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .reserve-guests {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,152 @@
+.facilities-section {
+  padding: 100px 40px;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.facilities-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-dim), transparent);
+}
+
+.facilities-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.facilities-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--accent-light);
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.facilities-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+  font-weight: 300;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.facility-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-accent);
+  box-shadow: 0 12px 40px rgba(196, 148, 90, 0.1);
+}
+
+.facility-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-elevated);
+}
+
+.facility-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, var(--bg-card), transparent);
+  pointer-events: none;
+}
+
+.facility-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.facility-card:hover .facility-image img {
+  transform: scale(1.08);
+}
+
+.facility-info {
+  padding: 30px;
+}
+
+.facility-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent-light);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.facility-info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-section {
+    padding: 70px 20px;
+  }
+
+  .facilities-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .facilities-subtitle {
+    margin-bottom: 40px;
+    font-size: 12px;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .facility-image {
+    height: 250px;
+  }
+
+  .facility-info {
+    padding: 25px;
+  }
+
+  .facility-info h3 {
+    font-size: 20px;
+  }
+}

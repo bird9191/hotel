@@ -1,0 +1,196 @@
+.confirmation-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding-top: 122px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-container {
+  max-width: 650px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.confirmation-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.confirmation-icon {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.confirmation-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--accent-light);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.confirmation-subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 35px;
+}
+
+.booking-id-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: rgba(196, 148, 90, 0.06);
+  border: 1px dashed var(--border-accent);
+  margin-bottom: 35px;
+}
+
+.booking-id-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.booking-id-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+}
+
+.confirmation-details {
+  text-align: left;
+}
+
+.conf-section {
+  margin-bottom: 25px;
+}
+
+.conf-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.conf-room-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.conf-room-img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.conf-room-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.conf-room-area {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+.conf-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.conf-label {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+.conf-value {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.conf-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-accent);
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.conf-total-price {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent-light);
+  text-transform: none;
+}
+
+.conf-home-btn {
+  margin-top: 30px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 14px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.conf-home-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .confirmation-page {
+    padding-top: 100px;
+  }
+
+  .confirmation-card {
+    padding: 30px 20px;
+  }
+
+  .confirmation-title {
+    font-size: 24px;
+  }
+
+  .booking-id-value {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+}

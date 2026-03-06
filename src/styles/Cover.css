@@ -1,0 +1,115 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-top: 102px;
+  min-height: calc(100vh - 102px);
+  background: url('/hotel-building.png') center/cover no-repeat;
+  background-color: #1a1610;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(13, 11, 7, 0.4) 0%,
+      rgba(13, 11, 7, 0.2) 40%,
+      rgba(13, 11, 7, 0.5) 70%,
+      rgba(13, 11, 7, 0.9) 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(196, 148, 90, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(13, 11, 7, 0.3) 100%);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--text-primary);
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s ease-out;
+  margin-top: -200px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: 1;
+  letter-spacing: 24px;
+  color: var(--accent-light);
+  text-shadow:
+    0 0 60px rgba(196, 148, 90, 0.3),
+    0 2px 30px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  color: #E8C48A;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(232, 196, 138, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 80px;
+    letter-spacing: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 56px;
+    letter-spacing: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 5px;
+  }
+
+  .hero-content {
+    margin-top: -50px;
+  }
+}
