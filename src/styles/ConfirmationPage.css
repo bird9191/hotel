@@ -192,5 +192,45 @@
   .booking-id-value {
     font-size: 22px;
     letter-spacing: 2px;
+    overflow-wrap: break-word;
+  }
+
+  .conf-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .conf-value {
+    font-size: 13px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .conf-total-price {
+    font-size: 20px;
+  }
+
+  .conf-home-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .confirmation-page {
+    padding-top: 90px;
+  }
+
+  .confirmation-card {
+    padding: 24px 16px;
+  }
+
+  .confirmation-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .booking-id-value {
+    font-size: 18px;
+    letter-spacing: 1px;
   }
 }

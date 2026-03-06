@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useState, useCallback, useMemo, type ReactNode } from 'react'
 import { differenceInCalendarDays } from 'date-fns'
 import type { Room } from '../data/rooms'
 import { createBooking as apiCreateBooking, fetchBooking as apiFetchBooking, type BookingResponse } from '../api'
@@ -35,10 +35,11 @@ interface BookingContextType {
 
 const BookingContext = createContext<BookingContextType | null>(null)
 
-function toBookingData(res: BookingResponse): BookingData {
+function toBookingData(res: BookingResponse): BookingData | null {
+  if (!res.room) return null
   return {
     id: res.id,
-    room: res.room!,
+    room: res.room,
     checkIn: new Date(res.check_in),
     checkOut: new Date(res.check_out),
     guests: res.guests,
@@ -119,24 +120,24 @@ export function BookingProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
+  const value = useMemo(() => ({
+    checkIn,
+    checkOut,
+    guests,
+    selectedRoom,
+    nights,
+    setCheckIn,
+    setCheckOut,
+    setGuests,
+    selectRoom,
+    clearRoom,
+    getTotalPrice,
+    saveBooking,
+    getBooking,
+  }), [checkIn, checkOut, guests, selectedRoom, nights, setCheckIn, setCheckOut, setGuests, selectRoom, clearRoom, getTotalPrice, saveBooking, getBooking])
+
   return (
-    <BookingContext.Provider
-      value={{
-        checkIn,
-        checkOut,
-        guests,
-        selectedRoom,
-        nights,
-        setCheckIn,
-        setCheckOut,
-        setGuests,
-        selectRoom,
-        clearRoom,
-        getTotalPrice,
-        saveBooking,
-        getBooking,
-      }}
-    >
+    <BookingContext.Provider value={value}>
       {children}
     </BookingContext.Provider>
   )

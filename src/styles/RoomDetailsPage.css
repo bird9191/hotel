@@ -288,10 +288,58 @@
 
   .room-details-title {
     font-size: 24px;
+    overflow-wrap: break-word;
+  }
+
+  .spec-value {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: right;
+    max-width: 60%;
+  }
+
+  .room-price-main {
+    font-size: 24px;
   }
 
   .book-this-room-btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .room-details-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .room-details-container {
+    padding: 0 12px;
+  }
+
+  .room-details-content {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .main-image {
+    height: 220px;
+  }
+
+  .thumbnail {
+    height: 70px;
+  }
+
+  .thumbnail-grid {
+    gap: 8px;
+  }
+
+  .room-details-title {
+    font-size: 20px;
+  }
+
+  .room-price-main {
+    font-size: 20px;
   }
 }

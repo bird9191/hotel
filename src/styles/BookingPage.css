@@ -234,9 +234,60 @@
 
   .booking-page-title {
     font-size: 26px;
+    letter-spacing: 1px;
   }
 
   .booking-form {
     padding: 25px;
+  }
+
+  .summary-image {
+    height: 180px;
+  }
+
+  .summary-details {
+    padding: 20px;
+  }
+
+  .summary-room-title {
+    font-size: 20px;
+  }
+
+  .summary-total-amount {
+    font-size: 22px;
+  }
+
+  .summary-value {
+    font-size: 13px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 420px) {
+  .booking-page {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  .booking-page-container {
+    padding: 0 12px;
+  }
+
+  .booking-page-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .booking-page-content {
+    gap: 20px;
+  }
+
+  .booking-form {
+    padding: 20px 16px;
+  }
+
+  .summary-details {
+    padding: 16px;
   }
 }

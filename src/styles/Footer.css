@@ -105,6 +105,32 @@
   }
 
   .footer-links {
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+    letter-spacing: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: 30px 16px 20px;
+  }
+
+  .footer-links {
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  .footer-col a,
+  .footer-col span {
+    font-size: 12px;
   }
 }

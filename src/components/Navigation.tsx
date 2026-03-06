@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/Navigation.css'
 
@@ -8,18 +9,22 @@ interface NavigationProps {
 const Navigation = ({ scrolled }: NavigationProps) => {
   const navigate = useNavigate()
 
+  const go = useCallback((path: string) => {
+    navigate(path)
+  }, [navigate])
+
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-row">
         <nav className="main-nav">
-          <span className="main-nav-link" onClick={() => navigate('/')}>Главная</span>
-          <span className="main-nav-link" onClick={() => navigate('/#rooms')}>Номера</span>
-          <span className="main-nav-link" onClick={() => navigate('/#facilities')}>Удобства</span>
-          <span className="main-nav-link">Галерея</span>
+          <button className="main-nav-link" type="button" onClick={() => go('/')}>Главная</button>
+          <button className="main-nav-link" type="button" onClick={() => go('/#rooms')}>Номера</button>
+          <button className="main-nav-link" type="button" onClick={() => go('/#facilities')}>Удобства</button>
+          <button className="main-nav-link" type="button" onClick={() => go('/#footer')}>Галерея</button>
         </nav>
         <div className="utility-links">
-          <span className="utility-link" onClick={() => navigate('/#footer')}>Контакты</span>
-          <span className="utility-link">Поддержка</span>
+          <button className="utility-link" type="button" onClick={() => go('/#footer')}>Контакты</button>
+          <button className="utility-link" type="button" onClick={() => go('/#footer')}>Поддержка</button>
         </div>
       </div>
     </header>

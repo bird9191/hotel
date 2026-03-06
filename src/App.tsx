@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type CSSProperties } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { BookingProvider } from './context/BookingContext'
 import Splash from './components/Splash'
@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage'
 import RoomDetailsPage from './pages/RoomDetailsPage'
 import BookingPage from './pages/BookingPage'
 import ConfirmationPage from './pages/ConfirmationPage'
+
+const rootStyle: CSSProperties = { width: '100%', minHeight: '100vh' }
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <BookingProvider>
-      <div style={{ width: '100%', minHeight: '100vh' }}>
+      <div style={rootStyle}>
         <Splash />
         <Routes>
           <Route path="/" element={<HomePage scrolled={scrolled} />} />

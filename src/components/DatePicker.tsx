@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import {
   startOfMonth, endOfMonth, startOfWeek, endOfWeek,
   addDays, addMonths, isSameDay, isSameMonth,
@@ -44,6 +44,15 @@ const DatePicker = ({ isOpen, checkIn, checkOut, onConfirm, onClose }: DatePicke
   const [tempCheckOut, setTempCheckOut] = useState<Date | null>(checkOut)
   const [selectingCheckOut, setSelectingCheckOut] = useState(false)
   const [baseMonth, setBaseMonth] = useState(startOfMonth(checkIn))
+
+  useEffect(() => {
+    if (isOpen) {
+      setTempCheckIn(checkIn)
+      setTempCheckOut(checkOut)
+      setSelectingCheckOut(false)
+      setBaseMonth(startOfMonth(checkIn))
+    }
+  }, [isOpen, checkIn, checkOut])
 
   const today = useMemo(() => {
     const d = new Date()

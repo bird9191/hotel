@@ -7,28 +7,28 @@ interface Facility {
   image: string
 }
 
-const Facilities = () => {
-  const facilities: Facility[] = [
-    {
-      id: 'gym',
-      title: 'Спортзал',
-      description: 'Современный фитнес-центр с профессиональным оборудованием',
-      image: '/facilities/gym.jpg'
-    },
-    {
-      id: 'restaurant',
-      title: 'Столовая',
-      description: 'Ресторан с изысканной кухней и панорамным видом',
-      image: '/facilities/restaurant.jpg'
-    },
-    {
-      id: 'lobby',
-      title: 'Холл',
-      description: 'Просторный холл с комфортной зоной отдыха',
-      image: '/facilities/lobby.jpg'
-    }
-  ]
+const facilities: Facility[] = [
+  {
+    id: 'gym',
+    title: 'Спортзал',
+    description: 'Современный фитнес-центр с профессиональным оборудованием',
+    image: '/facilities/gym.jpg'
+  },
+  {
+    id: 'restaurant',
+    title: 'Столовая',
+    description: 'Ресторан с изысканной кухней и панорамным видом',
+    image: '/facilities/restaurant.jpg'
+  },
+  {
+    id: 'lobby',
+    title: 'Холл',
+    description: 'Просторный холл с комфортной зоной отдыха',
+    image: '/facilities/lobby.jpg'
+  }
+]
 
+const Facilities = () => {
   return (
     <section className="facilities-section" id="facilities">
       <div className="facilities-container">

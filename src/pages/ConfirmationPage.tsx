@@ -17,7 +17,8 @@ const ConfirmationPage = ({ scrolled }: ConfirmationPageProps) => {
   const { getBooking, clearRoom } = useBooking()
   const [booking, setBooking] = useState<BookingData | null>(null)
 
-  const bookingId = (location.state as { bookingId?: string })?.bookingId
+  const state = location.state as Record<string, unknown> | null
+  const bookingId = typeof state?.bookingId === 'string' ? state.bookingId : null
 
   useEffect(() => {
     if (!bookingId) {
@@ -25,7 +26,10 @@ const ConfirmationPage = ({ scrolled }: ConfirmationPageProps) => {
       return
     }
 
+    let cancelled = false
+
     getBooking(bookingId).then(found => {
+      if (cancelled) return
       if (found) {
         setBooking(found)
         clearRoom()
@@ -33,6 +37,8 @@ const ConfirmationPage = ({ scrolled }: ConfirmationPageProps) => {
         navigate('/')
       }
     })
+
+    return () => { cancelled = true }
   }, [bookingId, getBooking, clearRoom, navigate])
 
   if (!booking) return null
